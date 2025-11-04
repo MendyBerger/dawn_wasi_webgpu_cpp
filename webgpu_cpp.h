@@ -44,8 +44,7 @@
 #include <type_traits>
 #include <utility>
 
-// #include "webgpu/webgpu.h"
-#include "/media/mendyberger/USB-Card/wasi/wasi-webgpu-headers/webgpu/webgpu.h"
+#include "webgpu/webgpu.h"
 #include "./webgpu_cpp_chained_struct.h"
 #include "./webgpu_enum_class_bitmasks.h"  // IWYU pragma: export
 
@@ -221,9 +220,9 @@ enum class AddressMode : uint32_t {
 // static_assert(alignof(AddressMode) == alignof(WGPUAddressMode), "alignof mismatch for AddressMode");
 
 enum class AlphaMode : uint32_t {
-    Opaque = 0xABCDEF, // WGPUAlphaMode_Opaque,
-    Premultiplied = 0xABCDEF, // WGPUAlphaMode_Premultiplied,
-    Unpremultiplied = 0xABCDEF, // WGPUAlphaMode_Unpremultiplied,
+    Opaque = 0x0ABCDE, // WGPUAlphaMode_Opaque,
+    Premultiplied = 0x0ABCDE, // WGPUAlphaMode_Premultiplied,
+    Unpremultiplied = 0x0ABCDE, // WGPUAlphaMode_Unpremultiplied,
 };
 // static_assert(sizeof(AlphaMode) == sizeof(WGPUAlphaMode), "sizeof mismatch for AlphaMode");
 // static_assert(alignof(AlphaMode) == alignof(WGPUAlphaMode), "alignof mismatch for AlphaMode");
@@ -318,7 +317,7 @@ enum class CompareFunction : uint32_t {
 
 enum class CompilationInfoRequestStatus : uint32_t {
     Success = WGPUCompilationInfoRequestStatus_Success,
-    CallbackCancelled = 0xABCDEF, // WGPUCompilationInfoRequestStatus_CallbackCancelled,
+    CallbackCancelled = 0x0ABCDE, // WGPUCompilationInfoRequestStatus_CallbackCancelled,
 };
 // static_assert(sizeof(CompilationInfoRequestStatus) == sizeof(WGPUCompilationInfoRequestStatus), "sizeof mismatch for CompilationInfoRequestStatus");
 // static_assert(alignof(CompilationInfoRequestStatus) == alignof(WGPUCompilationInfoRequestStatus), "alignof mismatch for CompilationInfoRequestStatus");
@@ -332,13 +331,13 @@ enum class CompilationMessageType : uint32_t {
 // static_assert(alignof(CompilationMessageType) == alignof(WGPUCompilationMessageType), "alignof mismatch for CompilationMessageType");
 
 enum class ComponentSwizzle : uint32_t {
-    Undefined = 0xABCDEF, // WGPUComponentSwizzle_Undefined,
-    Zero = 0xABCDEF, // WGPUComponentSwizzle_Zero,
-    One = 0xABCDEF, // WGPUComponentSwizzle_One,
-    R = 0xABCDEF, // WGPUComponentSwizzle_R,
-    G = 0xABCDEF, // WGPUComponentSwizzle_G,
-    B = 0xABCDEF, // WGPUComponentSwizzle_B,
-    A = 0xABCDEF, // WGPUComponentSwizzle_A,
+    Undefined = 0x0ABCDE, // WGPUComponentSwizzle_Undefined,
+    Zero = 0x0ABCDE, // WGPUComponentSwizzle_Zero,
+    One = 0x0ABCDE, // WGPUComponentSwizzle_One,
+    R = 0x0ABCDE, // WGPUComponentSwizzle_R,
+    G = 0x0ABCDE, // WGPUComponentSwizzle_G,
+    B = 0x0ABCDE, // WGPUComponentSwizzle_B,
+    A = 0x0ABCDE, // WGPUComponentSwizzle_A,
 };
 // static_assert(sizeof(ComponentSwizzle) == sizeof(WGPUComponentSwizzle), "sizeof mismatch for ComponentSwizzle");
 // static_assert(alignof(ComponentSwizzle) == alignof(WGPUComponentSwizzle), "alignof mismatch for ComponentSwizzle");
@@ -355,7 +354,7 @@ enum class CompositeAlphaMode : uint32_t {
 
 enum class CreatePipelineAsyncStatus : uint32_t {
     Success = WGPUCreatePipelineAsyncStatus_Success,
-    CallbackCancelled = 0xABCDEF, // WGPUCreatePipelineAsyncStatus_CallbackCancelled,
+    CallbackCancelled = 0x0ABCDE, // WGPUCreatePipelineAsyncStatus_CallbackCancelled,
     ValidationError = WGPUCreatePipelineAsyncStatus_ValidationError,
     InternalError = WGPUCreatePipelineAsyncStatus_InternalError,
 };
@@ -374,15 +373,15 @@ enum class CullMode : uint32_t {
 enum class DeviceLostReason : uint32_t {
     Unknown = WGPUDeviceLostReason_Unknown,
     Destroyed = WGPUDeviceLostReason_Destroyed,
-    CallbackCancelled = 0xABCDEF, // WGPUDeviceLostReason_CallbackCancelled,
+    CallbackCancelled = 0x0ABCDE, // WGPUDeviceLostReason_CallbackCancelled,
     FailedCreation = WGPUDeviceLostReason_FailedCreation,
 };
 // static_assert(sizeof(DeviceLostReason) == sizeof(WGPUDeviceLostReason), "sizeof mismatch for DeviceLostReason");
 // static_assert(alignof(DeviceLostReason) == alignof(WGPUDeviceLostReason), "alignof mismatch for DeviceLostReason");
 
 enum class DynamicBindingKind : uint32_t {
-    Undefined = 0xABCDEF, // WGPUDynamicBindingKind_Undefined,
-    SampledTexture = 0xABCDEF, // WGPUDynamicBindingKind_SampledTexture,
+    Undefined = 0x0ABCDE, // WGPUDynamicBindingKind_Undefined,
+    SampledTexture = 0x0ABCDE, // WGPUDynamicBindingKind_SampledTexture,
 };
 // static_assert(sizeof(DynamicBindingKind) == sizeof(WGPUDynamicBindingKind), "sizeof mismatch for DynamicBindingKind");
 // static_assert(alignof(DynamicBindingKind) == alignof(WGPUDynamicBindingKind), "alignof mismatch for DynamicBindingKind");
@@ -406,10 +405,10 @@ enum class ErrorType : uint32_t {
 // static_assert(alignof(ErrorType) == alignof(WGPUErrorType), "alignof mismatch for ErrorType");
 
 enum class ExternalTextureRotation : uint32_t {
-    Rotate0Degrees = 0xABCDEF, // WGPUExternalTextureRotation_Rotate0Degrees,
-    Rotate90Degrees = 0xABCDEF, // WGPUExternalTextureRotation_Rotate90Degrees,
-    Rotate180Degrees = 0xABCDEF, // WGPUExternalTextureRotation_Rotate180Degrees,
-    Rotate270Degrees = 0xABCDEF, // WGPUExternalTextureRotation_Rotate270Degrees,
+    Rotate0Degrees = 0x0ABCDE, // WGPUExternalTextureRotation_Rotate0Degrees,
+    Rotate90Degrees = 0x0ABCDE, // WGPUExternalTextureRotation_Rotate90Degrees,
+    Rotate180Degrees = 0x0ABCDE, // WGPUExternalTextureRotation_Rotate180Degrees,
+    Rotate270Degrees = 0x0ABCDE, // WGPUExternalTextureRotation_Rotate270Degrees,
 };
 // static_assert(sizeof(ExternalTextureRotation) == sizeof(WGPUExternalTextureRotation), "sizeof mismatch for ExternalTextureRotation");
 // static_assert(alignof(ExternalTextureRotation) == alignof(WGPUExternalTextureRotation), "alignof mismatch for ExternalTextureRotation");
@@ -423,7 +422,7 @@ enum class FeatureLevel : uint32_t {
 // static_assert(alignof(FeatureLevel) == alignof(WGPUFeatureLevel), "alignof mismatch for FeatureLevel");
 
 enum class FeatureName : uint32_t {
-    CoreFeaturesAndLimits = 0xABCDEF, // WGPUFeatureName_CoreFeaturesAndLimits,
+    CoreFeaturesAndLimits = 0x0ABCDE, // WGPUFeatureName_CoreFeaturesAndLimits,
     DepthClipControl = WGPUFeatureName_DepthClipControl,
     Depth32FloatStencil8 = WGPUFeatureName_Depth32FloatStencil8,
     TextureCompressionBC = WGPUFeatureName_TextureCompressionBC,
@@ -441,68 +440,68 @@ enum class FeatureName : uint32_t {
     ClipDistances = WGPUFeatureName_ClipDistances,
     DualSourceBlending = WGPUFeatureName_DualSourceBlending,
     Subgroups = WGPUFeatureName_Subgroups,
-    TextureFormatsTier1 = 0xABCDEF, // WGPUFeatureName_TextureFormatsTier1,
-    TextureFormatsTier2 = 0xABCDEF, // WGPUFeatureName_TextureFormatsTier2,
-    PrimitiveIndex = 0xABCDEF, // WGPUFeatureName_PrimitiveIndex,
-    DawnInternalUsages = 0xABCDEF, // WGPUFeatureName_DawnInternalUsages,
-    DawnMultiPlanarFormats = 0xABCDEF, // WGPUFeatureName_DawnMultiPlanarFormats,
-    DawnNative = 0xABCDEF, // WGPUFeatureName_DawnNative,
-    ChromiumExperimentalTimestampQueryInsidePasses = 0xABCDEF, // WGPUFeatureName_ChromiumExperimentalTimestampQueryInsidePasses,
-    ImplicitDeviceSynchronization = 0xABCDEF, // WGPUFeatureName_ImplicitDeviceSynchronization,
-    TransientAttachments = 0xABCDEF, // WGPUFeatureName_TransientAttachments,
-    MSAARenderToSingleSampled = 0xABCDEF, // WGPUFeatureName_MSAARenderToSingleSampled,
-    D3D11MultithreadProtected = 0xABCDEF, // WGPUFeatureName_D3D11MultithreadProtected,
-    ANGLETextureSharing = 0xABCDEF, // WGPUFeatureName_ANGLETextureSharing,
-    PixelLocalStorageCoherent = 0xABCDEF, // WGPUFeatureName_PixelLocalStorageCoherent,
-    PixelLocalStorageNonCoherent = 0xABCDEF, // WGPUFeatureName_PixelLocalStorageNonCoherent,
-    Unorm16TextureFormats = 0xABCDEF, // WGPUFeatureName_Unorm16TextureFormats,
-    Snorm16TextureFormats = 0xABCDEF, // WGPUFeatureName_Snorm16TextureFormats,
-    MultiPlanarFormatExtendedUsages = 0xABCDEF, // WGPUFeatureName_MultiPlanarFormatExtendedUsages,
-    MultiPlanarFormatP010 = 0xABCDEF, // WGPUFeatureName_MultiPlanarFormatP010,
-    HostMappedPointer = 0xABCDEF, // WGPUFeatureName_HostMappedPointer,
-    MultiPlanarRenderTargets = 0xABCDEF, // WGPUFeatureName_MultiPlanarRenderTargets,
-    MultiPlanarFormatNv12a = 0xABCDEF, // WGPUFeatureName_MultiPlanarFormatNv12a,
-    FramebufferFetch = 0xABCDEF, // WGPUFeatureName_FramebufferFetch,
-    BufferMapExtendedUsages = 0xABCDEF, // WGPUFeatureName_BufferMapExtendedUsages,
-    AdapterPropertiesMemoryHeaps = 0xABCDEF, // WGPUFeatureName_AdapterPropertiesMemoryHeaps,
-    AdapterPropertiesD3D = 0xABCDEF, // WGPUFeatureName_AdapterPropertiesD3D,
-    AdapterPropertiesVk = 0xABCDEF, // WGPUFeatureName_AdapterPropertiesVk,
-    R8UnormStorage = 0xABCDEF, // WGPUFeatureName_R8UnormStorage,
-    DawnFormatCapabilities = 0xABCDEF, // WGPUFeatureName_DawnFormatCapabilities,
-    DawnDrmFormatCapabilities = 0xABCDEF, // WGPUFeatureName_DawnDrmFormatCapabilities,
-    Norm16TextureFormats = 0xABCDEF, // WGPUFeatureName_Norm16TextureFormats,
-    MultiPlanarFormatNv16 = 0xABCDEF, // WGPUFeatureName_MultiPlanarFormatNv16,
-    MultiPlanarFormatNv24 = 0xABCDEF, // WGPUFeatureName_MultiPlanarFormatNv24,
-    MultiPlanarFormatP210 = 0xABCDEF, // WGPUFeatureName_MultiPlanarFormatP210,
-    MultiPlanarFormatP410 = 0xABCDEF, // WGPUFeatureName_MultiPlanarFormatP410,
-    SharedTextureMemoryVkDedicatedAllocation = 0xABCDEF, // WGPUFeatureName_SharedTextureMemoryVkDedicatedAllocation,
-    SharedTextureMemoryAHardwareBuffer = 0xABCDEF, // WGPUFeatureName_SharedTextureMemoryAHardwareBuffer,
-    SharedTextureMemoryDmaBuf = 0xABCDEF, // WGPUFeatureName_SharedTextureMemoryDmaBuf,
-    SharedTextureMemoryOpaqueFD = 0xABCDEF, // WGPUFeatureName_SharedTextureMemoryOpaqueFD,
-    SharedTextureMemoryZirconHandle = 0xABCDEF, // WGPUFeatureName_SharedTextureMemoryZirconHandle,
-    SharedTextureMemoryDXGISharedHandle = 0xABCDEF, // WGPUFeatureName_SharedTextureMemoryDXGISharedHandle,
-    SharedTextureMemoryD3D11Texture2D = 0xABCDEF, // WGPUFeatureName_SharedTextureMemoryD3D11Texture2D,
-    SharedTextureMemoryIOSurface = 0xABCDEF, // WGPUFeatureName_SharedTextureMemoryIOSurface,
-    SharedTextureMemoryEGLImage = 0xABCDEF, // WGPUFeatureName_SharedTextureMemoryEGLImage,
-    SharedFenceVkSemaphoreOpaqueFD = 0xABCDEF, // WGPUFeatureName_SharedFenceVkSemaphoreOpaqueFD,
-    SharedFenceSyncFD = 0xABCDEF, // WGPUFeatureName_SharedFenceSyncFD,
-    SharedFenceVkSemaphoreZirconHandle = 0xABCDEF, // WGPUFeatureName_SharedFenceVkSemaphoreZirconHandle,
-    SharedFenceDXGISharedHandle = 0xABCDEF, // WGPUFeatureName_SharedFenceDXGISharedHandle,
-    SharedFenceMTLSharedEvent = 0xABCDEF, // WGPUFeatureName_SharedFenceMTLSharedEvent,
-    SharedBufferMemoryD3D12Resource = 0xABCDEF, // WGPUFeatureName_SharedBufferMemoryD3D12Resource,
-    StaticSamplers = 0xABCDEF, // WGPUFeatureName_StaticSamplers,
-    YCbCrVulkanSamplers = 0xABCDEF, // WGPUFeatureName_YCbCrVulkanSamplers,
-    ShaderModuleCompilationOptions = 0xABCDEF, // WGPUFeatureName_ShaderModuleCompilationOptions,
-    DawnLoadResolveTexture = 0xABCDEF, // WGPUFeatureName_DawnLoadResolveTexture,
-    DawnPartialLoadResolveTexture = 0xABCDEF, // WGPUFeatureName_DawnPartialLoadResolveTexture,
-    MultiDrawIndirect = 0xABCDEF, // WGPUFeatureName_MultiDrawIndirect,
-    DawnTexelCopyBufferRowAlignment = 0xABCDEF, // WGPUFeatureName_DawnTexelCopyBufferRowAlignment,
-    FlexibleTextureViews = 0xABCDEF, // WGPUFeatureName_FlexibleTextureViews,
-    ChromiumExperimentalSubgroupMatrix = 0xABCDEF, // WGPUFeatureName_ChromiumExperimentalSubgroupMatrix,
-    SharedFenceEGLSync = 0xABCDEF, // WGPUFeatureName_SharedFenceEGLSync,
-    DawnDeviceAllocatorControl = 0xABCDEF, // WGPUFeatureName_DawnDeviceAllocatorControl,
-    TextureComponentSwizzle = 0xABCDEF, // WGPUFeatureName_TextureComponentSwizzle,
-    ChromiumExperimentalBindless = 0xABCDEF, // WGPUFeatureName_ChromiumExperimentalBindless,
+    TextureFormatsTier1 = 0x0ABCDE, // WGPUFeatureName_TextureFormatsTier1,
+    TextureFormatsTier2 = 0x0ABCDE, // WGPUFeatureName_TextureFormatsTier2,
+    PrimitiveIndex = 0x0ABCDE, // WGPUFeatureName_PrimitiveIndex,
+    DawnInternalUsages = 0x0ABCDE, // WGPUFeatureName_DawnInternalUsages,
+    DawnMultiPlanarFormats = 0x0ABCDE, // WGPUFeatureName_DawnMultiPlanarFormats,
+    DawnNative = 0x0ABCDE, // WGPUFeatureName_DawnNative,
+    ChromiumExperimentalTimestampQueryInsidePasses = 0x0ABCDE, // WGPUFeatureName_ChromiumExperimentalTimestampQueryInsidePasses,
+    ImplicitDeviceSynchronization = 0x0ABCDE, // WGPUFeatureName_ImplicitDeviceSynchronization,
+    TransientAttachments = 0x0ABCDE, // WGPUFeatureName_TransientAttachments,
+    MSAARenderToSingleSampled = 0x0ABCDE, // WGPUFeatureName_MSAARenderToSingleSampled,
+    D3D11MultithreadProtected = 0x0ABCDE, // WGPUFeatureName_D3D11MultithreadProtected,
+    ANGLETextureSharing = 0x0ABCDE, // WGPUFeatureName_ANGLETextureSharing,
+    PixelLocalStorageCoherent = 0x0ABCDE, // WGPUFeatureName_PixelLocalStorageCoherent,
+    PixelLocalStorageNonCoherent = 0x0ABCDE, // WGPUFeatureName_PixelLocalStorageNonCoherent,
+    Unorm16TextureFormats = 0x0ABCDE, // WGPUFeatureName_Unorm16TextureFormats,
+    Snorm16TextureFormats = 0x0ABCDE, // WGPUFeatureName_Snorm16TextureFormats,
+    MultiPlanarFormatExtendedUsages = 0x0ABCDE, // WGPUFeatureName_MultiPlanarFormatExtendedUsages,
+    MultiPlanarFormatP010 = 0x0ABCDE, // WGPUFeatureName_MultiPlanarFormatP010,
+    HostMappedPointer = 0x0ABCDE, // WGPUFeatureName_HostMappedPointer,
+    MultiPlanarRenderTargets = 0x0ABCDE, // WGPUFeatureName_MultiPlanarRenderTargets,
+    MultiPlanarFormatNv12a = 0x0ABCDE, // WGPUFeatureName_MultiPlanarFormatNv12a,
+    FramebufferFetch = 0x0ABCDE, // WGPUFeatureName_FramebufferFetch,
+    BufferMapExtendedUsages = 0x0ABCDE, // WGPUFeatureName_BufferMapExtendedUsages,
+    AdapterPropertiesMemoryHeaps = 0x0ABCDE, // WGPUFeatureName_AdapterPropertiesMemoryHeaps,
+    AdapterPropertiesD3D = 0x0ABCDE, // WGPUFeatureName_AdapterPropertiesD3D,
+    AdapterPropertiesVk = 0x0ABCDE, // WGPUFeatureName_AdapterPropertiesVk,
+    R8UnormStorage = 0x0ABCDE, // WGPUFeatureName_R8UnormStorage,
+    DawnFormatCapabilities = 0x0ABCDE, // WGPUFeatureName_DawnFormatCapabilities,
+    DawnDrmFormatCapabilities = 0x0ABCDE, // WGPUFeatureName_DawnDrmFormatCapabilities,
+    Norm16TextureFormats = 0x0ABCDE, // WGPUFeatureName_Norm16TextureFormats,
+    MultiPlanarFormatNv16 = 0x0ABCDE, // WGPUFeatureName_MultiPlanarFormatNv16,
+    MultiPlanarFormatNv24 = 0x0ABCDE, // WGPUFeatureName_MultiPlanarFormatNv24,
+    MultiPlanarFormatP210 = 0x0ABCDE, // WGPUFeatureName_MultiPlanarFormatP210,
+    MultiPlanarFormatP410 = 0x0ABCDE, // WGPUFeatureName_MultiPlanarFormatP410,
+    SharedTextureMemoryVkDedicatedAllocation = 0x0ABCDE, // WGPUFeatureName_SharedTextureMemoryVkDedicatedAllocation,
+    SharedTextureMemoryAHardwareBuffer = 0x0ABCDE, // WGPUFeatureName_SharedTextureMemoryAHardwareBuffer,
+    SharedTextureMemoryDmaBuf = 0x0ABCDE, // WGPUFeatureName_SharedTextureMemoryDmaBuf,
+    SharedTextureMemoryOpaqueFD = 0x0ABCDE, // WGPUFeatureName_SharedTextureMemoryOpaqueFD,
+    SharedTextureMemoryZirconHandle = 0x0ABCDE, // WGPUFeatureName_SharedTextureMemoryZirconHandle,
+    SharedTextureMemoryDXGISharedHandle = 0x0ABCDE, // WGPUFeatureName_SharedTextureMemoryDXGISharedHandle,
+    SharedTextureMemoryD3D11Texture2D = 0x0ABCDE, // WGPUFeatureName_SharedTextureMemoryD3D11Texture2D,
+    SharedTextureMemoryIOSurface = 0x0ABCDE, // WGPUFeatureName_SharedTextureMemoryIOSurface,
+    SharedTextureMemoryEGLImage = 0x0ABCDE, // WGPUFeatureName_SharedTextureMemoryEGLImage,
+    SharedFenceVkSemaphoreOpaqueFD = 0x0ABCDE, // WGPUFeatureName_SharedFenceVkSemaphoreOpaqueFD,
+    SharedFenceSyncFD = 0x0ABCDE, // WGPUFeatureName_SharedFenceSyncFD,
+    SharedFenceVkSemaphoreZirconHandle = 0x0ABCDE, // WGPUFeatureName_SharedFenceVkSemaphoreZirconHandle,
+    SharedFenceDXGISharedHandle = 0x0ABCDE, // WGPUFeatureName_SharedFenceDXGISharedHandle,
+    SharedFenceMTLSharedEvent = 0x0ABCDE, // WGPUFeatureName_SharedFenceMTLSharedEvent,
+    SharedBufferMemoryD3D12Resource = 0x0ABCDE, // WGPUFeatureName_SharedBufferMemoryD3D12Resource,
+    StaticSamplers = 0x0ABCDE, // WGPUFeatureName_StaticSamplers,
+    YCbCrVulkanSamplers = 0x0ABCDE, // WGPUFeatureName_YCbCrVulkanSamplers,
+    ShaderModuleCompilationOptions = 0x0ABCDE, // WGPUFeatureName_ShaderModuleCompilationOptions,
+    DawnLoadResolveTexture = 0x0ABCDE, // WGPUFeatureName_DawnLoadResolveTexture,
+    DawnPartialLoadResolveTexture = 0x0ABCDE, // WGPUFeatureName_DawnPartialLoadResolveTexture,
+    MultiDrawIndirect = 0x0ABCDE, // WGPUFeatureName_MultiDrawIndirect,
+    DawnTexelCopyBufferRowAlignment = 0x0ABCDE, // WGPUFeatureName_DawnTexelCopyBufferRowAlignment,
+    FlexibleTextureViews = 0x0ABCDE, // WGPUFeatureName_FlexibleTextureViews,
+    ChromiumExperimentalSubgroupMatrix = 0x0ABCDE, // WGPUFeatureName_ChromiumExperimentalSubgroupMatrix,
+    SharedFenceEGLSync = 0x0ABCDE, // WGPUFeatureName_SharedFenceEGLSync,
+    DawnDeviceAllocatorControl = 0x0ABCDE, // WGPUFeatureName_DawnDeviceAllocatorControl,
+    TextureComponentSwizzle = 0x0ABCDE, // WGPUFeatureName_TextureComponentSwizzle,
+    ChromiumExperimentalBindless = 0x0ABCDE, // WGPUFeatureName_ChromiumExperimentalBindless,
 };
 // static_assert(sizeof(FeatureName) == sizeof(WGPUFeatureName), "sizeof mismatch for FeatureName");
 // static_assert(alignof(FeatureName) == alignof(WGPUFeatureName), "alignof mismatch for FeatureName");
@@ -532,9 +531,9 @@ enum class IndexFormat : uint32_t {
 // static_assert(alignof(IndexFormat) == alignof(WGPUIndexFormat), "alignof mismatch for IndexFormat");
 
 enum class InstanceFeatureName : uint32_t {
-    TimedWaitAny = 0xABCDEF, // WGPUInstanceFeatureName_TimedWaitAny,
-    ShaderSourceSPIRV = 0xABCDEF, // WGPUInstanceFeatureName_ShaderSourceSPIRV,
-    MultipleDevicesPerAdapter = 0xABCDEF, // WGPUInstanceFeatureName_MultipleDevicesPerAdapter,
+    TimedWaitAny = 0x0ABCDE, // WGPUInstanceFeatureName_TimedWaitAny,
+    ShaderSourceSPIRV = 0x0ABCDE, // WGPUInstanceFeatureName_ShaderSourceSPIRV,
+    MultipleDevicesPerAdapter = 0x0ABCDE, // WGPUInstanceFeatureName_MultipleDevicesPerAdapter,
 };
 // static_assert(sizeof(InstanceFeatureName) == sizeof(WGPUInstanceFeatureName), "sizeof mismatch for InstanceFeatureName");
 // static_assert(alignof(InstanceFeatureName) == alignof(WGPUInstanceFeatureName), "alignof mismatch for InstanceFeatureName");
@@ -543,23 +542,23 @@ enum class LoadOp : uint32_t {
     Undefined = WGPULoadOp_Undefined,
     Load = WGPULoadOp_Load,
     Clear = WGPULoadOp_Clear,
-    ExpandResolveTexture = 0xABCDEF, // WGPULoadOp_ExpandResolveTexture,
+    ExpandResolveTexture = 0x0ABCDE, // WGPULoadOp_ExpandResolveTexture,
 };
 // static_assert(sizeof(LoadOp) == sizeof(WGPULoadOp), "sizeof mismatch for LoadOp");
 // static_assert(alignof(LoadOp) == alignof(WGPULoadOp), "alignof mismatch for LoadOp");
 
 enum class LoggingType : uint32_t {
-    Verbose = 0xABCDEF, // WGPULoggingType_Verbose,
-    Info = 0xABCDEF, // WGPULoggingType_Info,
-    Warning = 0xABCDEF, // WGPULoggingType_Warning,
-    Error = 0xABCDEF, // WGPULoggingType_Error,
+    Verbose = 0x0ABCDE, // WGPULoggingType_Verbose,
+    Info = 0x0ABCDE, // WGPULoggingType_Info,
+    Warning = 0x0ABCDE, // WGPULoggingType_Warning,
+    Error = 0x0ABCDE, // WGPULoggingType_Error,
 };
 // static_assert(sizeof(LoggingType) == sizeof(WGPULoggingType), "sizeof mismatch for LoggingType");
 // static_assert(alignof(LoggingType) == alignof(WGPULoggingType), "alignof mismatch for LoggingType");
 
 enum class MapAsyncStatus : uint32_t {
     Success = WGPUMapAsyncStatus_Success,
-    CallbackCancelled = 0xABCDEF, // WGPUMapAsyncStatus_CallbackCancelled,
+    CallbackCancelled = 0x0ABCDE, // WGPUMapAsyncStatus_CallbackCancelled,
     Error = WGPUMapAsyncStatus_Error,
     Aborted = WGPUMapAsyncStatus_Aborted,
 };
@@ -576,7 +575,7 @@ enum class MipmapFilterMode : uint32_t {
 
 enum class PopErrorScopeStatus : uint32_t {
     Success = WGPUPopErrorScopeStatus_Success,
-    CallbackCancelled = 0xABCDEF, // WGPUPopErrorScopeStatus_CallbackCancelled,
+    CallbackCancelled = 0x0ABCDE, // WGPUPopErrorScopeStatus_CallbackCancelled,
     Error = WGPUPopErrorScopeStatus_Error,
 };
 // static_assert(sizeof(PopErrorScopeStatus) == sizeof(WGPUPopErrorScopeStatus), "sizeof mismatch for PopErrorScopeStatus");
@@ -627,7 +626,7 @@ enum class QueryType : uint32_t {
 
 enum class QueueWorkDoneStatus : uint32_t {
     Success = WGPUQueueWorkDoneStatus_Success,
-    CallbackCancelled = 0xABCDEF, // WGPUQueueWorkDoneStatus_CallbackCancelled,
+    CallbackCancelled = 0x0ABCDE, // WGPUQueueWorkDoneStatus_CallbackCancelled,
     Error = WGPUQueueWorkDoneStatus_Error,
 };
 // static_assert(sizeof(QueueWorkDoneStatus) == sizeof(WGPUQueueWorkDoneStatus), "sizeof mismatch for QueueWorkDoneStatus");
@@ -635,20 +634,21 @@ enum class QueueWorkDoneStatus : uint32_t {
 
 enum class RequestAdapterStatus : uint32_t {
     Success = WGPURequestAdapterStatus_Success,
-    CallbackCancelled = 0xABCDEF, // WGPURequestAdapterStatus_CallbackCancelled,
+    CallbackCancelled = 0x0ABCDE, // WGPURequestAdapterStatus_CallbackCancelled,
     Unavailable = WGPURequestAdapterStatus_Unavailable,
     Error = WGPURequestAdapterStatus_Error,
 };
-// static_assert(sizeof(RequestAdapterStatus) == sizeof(WGPURequestAdapterStatus), "sizeof mismatch for RequestAdapterStatus");
-// static_assert(alignof(RequestAdapterStatus) == alignof(WGPURequestAdapterStatus), "alignof mismatch for RequestAdapterStatus");
+
+static_assert(sizeof(RequestAdapterStatus) == sizeof(WGPURequestAdapterStatus), "sizeof mismatch for RequestAdapterStatus");
+static_assert(alignof(RequestAdapterStatus) == alignof(WGPURequestAdapterStatus), "alignof mismatch for RequestAdapterStatus");
 
 enum class RequestDeviceStatus : uint32_t {
     Success = WGPURequestDeviceStatus_Success,
-    CallbackCancelled = 0xABCDEF, // WGPURequestDeviceStatus_CallbackCancelled,
+    CallbackCancelled = 0x0ABCDE, // WGPURequestDeviceStatus_CallbackCancelled,
     Error = WGPURequestDeviceStatus_Error,
 };
-// static_assert(sizeof(RequestDeviceStatus) == sizeof(WGPURequestDeviceStatus), "sizeof mismatch for RequestDeviceStatus");
-// static_assert(alignof(RequestDeviceStatus) == alignof(WGPURequestDeviceStatus), "alignof mismatch for RequestDeviceStatus");
+static_assert(sizeof(RequestDeviceStatus) == sizeof(WGPURequestDeviceStatus), "sizeof mismatch for RequestDeviceStatus");
+static_assert(alignof(RequestDeviceStatus) == alignof(WGPURequestDeviceStatus), "alignof mismatch for RequestDeviceStatus");
 
 enum class SamplerBindingType : uint32_t {
     BindingNotUsed = WGPUSamplerBindingType_BindingNotUsed,
@@ -661,12 +661,12 @@ enum class SamplerBindingType : uint32_t {
 // static_assert(alignof(SamplerBindingType) == alignof(WGPUSamplerBindingType), "alignof mismatch for SamplerBindingType");
 
 enum class SharedFenceType : uint32_t {
-    VkSemaphoreOpaqueFD = 0xABCDEF, // WGPUSharedFenceType_VkSemaphoreOpaqueFD,
-    SyncFD = 0xABCDEF, // WGPUSharedFenceType_SyncFD,
-    VkSemaphoreZirconHandle = 0xABCDEF, // WGPUSharedFenceType_VkSemaphoreZirconHandle,
-    DXGISharedHandle = 0xABCDEF, // WGPUSharedFenceType_DXGISharedHandle,
-    MTLSharedEvent = 0xABCDEF, // WGPUSharedFenceType_MTLSharedEvent,
-    EGLSync = 0xABCDEF, // WGPUSharedFenceType_EGLSync,
+    VkSemaphoreOpaqueFD = 0x0ABCDE, // WGPUSharedFenceType_VkSemaphoreOpaqueFD,
+    SyncFD = 0x0ABCDE, // WGPUSharedFenceType_SyncFD,
+    VkSemaphoreZirconHandle = 0x0ABCDE, // WGPUSharedFenceType_VkSemaphoreZirconHandle,
+    DXGISharedHandle = 0x0ABCDE, // WGPUSharedFenceType_DXGISharedHandle,
+    MTLSharedEvent = 0x0ABCDE, // WGPUSharedFenceType_MTLSharedEvent,
+    EGLSync = 0x0ABCDE, // WGPUSharedFenceType_EGLSync,
 };
 // static_assert(sizeof(SharedFenceType) == sizeof(WGPUSharedFenceType), "sizeof mismatch for SharedFenceType");
 // static_assert(alignof(SharedFenceType) == alignof(WGPUSharedFenceType), "alignof mismatch for SharedFenceType");
@@ -722,96 +722,96 @@ enum class SType : uint32_t {
     SurfaceSourceXCBWindow = WGPUSType_SurfaceSourceXCBWindow,
     SurfaceColorManagement = WGPUSType_SurfaceColorManagement,
     RequestAdapterWebXROptions = WGPUSType_RequestAdapterWebXROptions,
-    CompatibilityModeLimits = 0xABCDEF, // WGPUSType_CompatibilityModeLimits,
-    TextureBindingViewDimensionDescriptor = 0xABCDEF, // WGPUSType_TextureBindingViewDimensionDescriptor,
-    EmscriptenSurfaceSourceCanvasHTMLSelector = 0xABCDEF, // WGPUSType_EmscriptenSurfaceSourceCanvasHTMLSelector,
-    SurfaceDescriptorFromWindowsCoreWindow = 0xABCDEF, // WGPUSType_SurfaceDescriptorFromWindowsCoreWindow,
-    ExternalTextureBindingEntry = 0xABCDEF, // WGPUSType_ExternalTextureBindingEntry,
-    ExternalTextureBindingLayout = 0xABCDEF, // WGPUSType_ExternalTextureBindingLayout,
-    SurfaceDescriptorFromWindowsUWPSwapChainPanel = 0xABCDEF, // WGPUSType_SurfaceDescriptorFromWindowsUWPSwapChainPanel,
-    DawnTextureInternalUsageDescriptor = 0xABCDEF, // WGPUSType_DawnTextureInternalUsageDescriptor,
-    DawnEncoderInternalUsageDescriptor = 0xABCDEF, // WGPUSType_DawnEncoderInternalUsageDescriptor,
-    DawnInstanceDescriptor = 0xABCDEF, // WGPUSType_DawnInstanceDescriptor,
-    DawnCacheDeviceDescriptor = 0xABCDEF, // WGPUSType_DawnCacheDeviceDescriptor,
-    DawnAdapterPropertiesPowerPreference = 0xABCDEF, // WGPUSType_DawnAdapterPropertiesPowerPreference,
-    DawnBufferDescriptorErrorInfoFromWireClient = 0xABCDEF, // WGPUSType_DawnBufferDescriptorErrorInfoFromWireClient,
-    DawnTogglesDescriptor = 0xABCDEF, // WGPUSType_DawnTogglesDescriptor,
-    DawnShaderModuleSPIRVOptionsDescriptor = 0xABCDEF, // WGPUSType_DawnShaderModuleSPIRVOptionsDescriptor,
-    RequestAdapterOptionsLUID = 0xABCDEF, // WGPUSType_RequestAdapterOptionsLUID,
-    RequestAdapterOptionsGetGLProc = 0xABCDEF, // WGPUSType_RequestAdapterOptionsGetGLProc,
-    RequestAdapterOptionsD3D11Device = 0xABCDEF, // WGPUSType_RequestAdapterOptionsD3D11Device,
-    DawnRenderPassColorAttachmentRenderToSingleSampled = 0xABCDEF, // WGPUSType_DawnRenderPassColorAttachmentRenderToSingleSampled,
-    RenderPassPixelLocalStorage = 0xABCDEF, // WGPUSType_RenderPassPixelLocalStorage,
-    PipelineLayoutPixelLocalStorage = 0xABCDEF, // WGPUSType_PipelineLayoutPixelLocalStorage,
-    BufferHostMappedPointer = 0xABCDEF, // WGPUSType_BufferHostMappedPointer,
-    AdapterPropertiesMemoryHeaps = 0xABCDEF, // WGPUSType_AdapterPropertiesMemoryHeaps,
-    AdapterPropertiesD3D = 0xABCDEF, // WGPUSType_AdapterPropertiesD3D,
-    AdapterPropertiesVk = 0xABCDEF, // WGPUSType_AdapterPropertiesVk,
-    DawnWireWGSLControl = 0xABCDEF, // WGPUSType_DawnWireWGSLControl,
-    DawnWGSLBlocklist = 0xABCDEF, // WGPUSType_DawnWGSLBlocklist,
-    DawnDrmFormatCapabilities = 0xABCDEF, // WGPUSType_DawnDrmFormatCapabilities,
-    ShaderModuleCompilationOptions = 0xABCDEF, // WGPUSType_ShaderModuleCompilationOptions,
-    ColorTargetStateExpandResolveTextureDawn = 0xABCDEF, // WGPUSType_ColorTargetStateExpandResolveTextureDawn,
-    RenderPassDescriptorExpandResolveRect = 0xABCDEF, // WGPUSType_RenderPassDescriptorExpandResolveRect,
-    SharedTextureMemoryVkDedicatedAllocationDescriptor = 0xABCDEF, // WGPUSType_SharedTextureMemoryVkDedicatedAllocationDescriptor,
-    SharedTextureMemoryAHardwareBufferDescriptor = 0xABCDEF, // WGPUSType_SharedTextureMemoryAHardwareBufferDescriptor,
-    SharedTextureMemoryDmaBufDescriptor = 0xABCDEF, // WGPUSType_SharedTextureMemoryDmaBufDescriptor,
-    SharedTextureMemoryOpaqueFDDescriptor = 0xABCDEF, // WGPUSType_SharedTextureMemoryOpaqueFDDescriptor,
-    SharedTextureMemoryZirconHandleDescriptor = 0xABCDEF, // WGPUSType_SharedTextureMemoryZirconHandleDescriptor,
-    SharedTextureMemoryDXGISharedHandleDescriptor = 0xABCDEF, // WGPUSType_SharedTextureMemoryDXGISharedHandleDescriptor,
-    SharedTextureMemoryD3D11Texture2DDescriptor = 0xABCDEF, // WGPUSType_SharedTextureMemoryD3D11Texture2DDescriptor,
-    SharedTextureMemoryIOSurfaceDescriptor = 0xABCDEF, // WGPUSType_SharedTextureMemoryIOSurfaceDescriptor,
-    SharedTextureMemoryEGLImageDescriptor = 0xABCDEF, // WGPUSType_SharedTextureMemoryEGLImageDescriptor,
-    SharedTextureMemoryInitializedBeginState = 0xABCDEF, // WGPUSType_SharedTextureMemoryInitializedBeginState,
-    SharedTextureMemoryInitializedEndState = 0xABCDEF, // WGPUSType_SharedTextureMemoryInitializedEndState,
-    SharedTextureMemoryVkImageLayoutBeginState = 0xABCDEF, // WGPUSType_SharedTextureMemoryVkImageLayoutBeginState,
-    SharedTextureMemoryVkImageLayoutEndState = 0xABCDEF, // WGPUSType_SharedTextureMemoryVkImageLayoutEndState,
-    SharedTextureMemoryD3DSwapchainBeginState = 0xABCDEF, // WGPUSType_SharedTextureMemoryD3DSwapchainBeginState,
-    SharedFenceVkSemaphoreOpaqueFDDescriptor = 0xABCDEF, // WGPUSType_SharedFenceVkSemaphoreOpaqueFDDescriptor,
-    SharedFenceVkSemaphoreOpaqueFDExportInfo = 0xABCDEF, // WGPUSType_SharedFenceVkSemaphoreOpaqueFDExportInfo,
-    SharedFenceSyncFDDescriptor = 0xABCDEF, // WGPUSType_SharedFenceSyncFDDescriptor,
-    SharedFenceSyncFDExportInfo = 0xABCDEF, // WGPUSType_SharedFenceSyncFDExportInfo,
-    SharedFenceVkSemaphoreZirconHandleDescriptor = 0xABCDEF, // WGPUSType_SharedFenceVkSemaphoreZirconHandleDescriptor,
-    SharedFenceVkSemaphoreZirconHandleExportInfo = 0xABCDEF, // WGPUSType_SharedFenceVkSemaphoreZirconHandleExportInfo,
-    SharedFenceDXGISharedHandleDescriptor = 0xABCDEF, // WGPUSType_SharedFenceDXGISharedHandleDescriptor,
-    SharedFenceDXGISharedHandleExportInfo = 0xABCDEF, // WGPUSType_SharedFenceDXGISharedHandleExportInfo,
-    SharedFenceMTLSharedEventDescriptor = 0xABCDEF, // WGPUSType_SharedFenceMTLSharedEventDescriptor,
-    SharedFenceMTLSharedEventExportInfo = 0xABCDEF, // WGPUSType_SharedFenceMTLSharedEventExportInfo,
-    SharedBufferMemoryD3D12ResourceDescriptor = 0xABCDEF, // WGPUSType_SharedBufferMemoryD3D12ResourceDescriptor,
-    StaticSamplerBindingLayout = 0xABCDEF, // WGPUSType_StaticSamplerBindingLayout,
-    YCbCrVkDescriptor = 0xABCDEF, // WGPUSType_YCbCrVkDescriptor,
-    SharedTextureMemoryAHardwareBufferProperties = 0xABCDEF, // WGPUSType_SharedTextureMemoryAHardwareBufferProperties,
-    AHardwareBufferProperties = 0xABCDEF, // WGPUSType_AHardwareBufferProperties,
-    DawnTexelCopyBufferRowAlignmentLimits = 0xABCDEF, // WGPUSType_DawnTexelCopyBufferRowAlignmentLimits,
-    AdapterPropertiesSubgroupMatrixConfigs = 0xABCDEF, // WGPUSType_AdapterPropertiesSubgroupMatrixConfigs,
-    SharedFenceEGLSyncDescriptor = 0xABCDEF, // WGPUSType_SharedFenceEGLSyncDescriptor,
-    SharedFenceEGLSyncExportInfo = 0xABCDEF, // WGPUSType_SharedFenceEGLSyncExportInfo,
-    DawnInjectedInvalidSType = 0xABCDEF, // WGPUSType_DawnInjectedInvalidSType,
-    DawnCompilationMessageUtf16 = 0xABCDEF, // WGPUSType_DawnCompilationMessageUtf16,
-    DawnFakeBufferOOMForTesting = 0xABCDEF, // WGPUSType_DawnFakeBufferOOMForTesting,
-    SurfaceDescriptorFromWindowsWinUISwapChainPanel = 0xABCDEF, // WGPUSType_SurfaceDescriptorFromWindowsWinUISwapChainPanel,
-    DawnDeviceAllocatorControl = 0xABCDEF, // WGPUSType_DawnDeviceAllocatorControl,
-    DawnHostMappedPointerLimits = 0xABCDEF, // WGPUSType_DawnHostMappedPointerLimits,
-    RenderPassDescriptorResolveRect = 0xABCDEF, // WGPUSType_RenderPassDescriptorResolveRect,
-    RequestAdapterWebGPUBackendOptions = 0xABCDEF, // WGPUSType_RequestAdapterWebGPUBackendOptions,
-    DawnFakeDeviceInitializeErrorForTesting = 0xABCDEF, // WGPUSType_DawnFakeDeviceInitializeErrorForTesting,
-    TextureComponentSwizzleDescriptor = 0xABCDEF, // WGPUSType_TextureComponentSwizzleDescriptor,
-    SharedTextureMemoryD3D11BeginState = 0xABCDEF, // WGPUSType_SharedTextureMemoryD3D11BeginState,
-    DawnConsumeAdapterDescriptor = 0xABCDEF, // WGPUSType_DawnConsumeAdapterDescriptor,
-    BindGroupLayoutDynamicBindingArray = 0xABCDEF, // WGPUSType_BindGroupLayoutDynamicBindingArray,
-    DynamicBindingArrayLimits = 0xABCDEF, // WGPUSType_DynamicBindingArrayLimits,
-    BindGroupDynamicBindingArray = 0xABCDEF, // WGPUSType_BindGroupDynamicBindingArray,
+    CompatibilityModeLimits = 0x0ABCDE, // WGPUSType_CompatibilityModeLimits,
+    TextureBindingViewDimensionDescriptor = 0x0ABCDE, // WGPUSType_TextureBindingViewDimensionDescriptor,
+    EmscriptenSurfaceSourceCanvasHTMLSelector = 0x0ABCDE, // WGPUSType_EmscriptenSurfaceSourceCanvasHTMLSelector,
+    SurfaceDescriptorFromWindowsCoreWindow = 0x0ABCDE, // WGPUSType_SurfaceDescriptorFromWindowsCoreWindow,
+    ExternalTextureBindingEntry = 0x0ABCDE, // WGPUSType_ExternalTextureBindingEntry,
+    ExternalTextureBindingLayout = 0x0ABCDE, // WGPUSType_ExternalTextureBindingLayout,
+    SurfaceDescriptorFromWindowsUWPSwapChainPanel = 0x0ABCDE, // WGPUSType_SurfaceDescriptorFromWindowsUWPSwapChainPanel,
+    DawnTextureInternalUsageDescriptor = 0x0ABCDE, // WGPUSType_DawnTextureInternalUsageDescriptor,
+    DawnEncoderInternalUsageDescriptor = 0x0ABCDE, // WGPUSType_DawnEncoderInternalUsageDescriptor,
+    DawnInstanceDescriptor = 0x0ABCDE, // WGPUSType_DawnInstanceDescriptor,
+    DawnCacheDeviceDescriptor = 0x0ABCDE, // WGPUSType_DawnCacheDeviceDescriptor,
+    DawnAdapterPropertiesPowerPreference = 0x0ABCDE, // WGPUSType_DawnAdapterPropertiesPowerPreference,
+    DawnBufferDescriptorErrorInfoFromWireClient = 0x0ABCDE, // WGPUSType_DawnBufferDescriptorErrorInfoFromWireClient,
+    DawnTogglesDescriptor = 0x0ABCDE, // WGPUSType_DawnTogglesDescriptor,
+    DawnShaderModuleSPIRVOptionsDescriptor = 0x0ABCDE, // WGPUSType_DawnShaderModuleSPIRVOptionsDescriptor,
+    RequestAdapterOptionsLUID = 0x0ABCDE, // WGPUSType_RequestAdapterOptionsLUID,
+    RequestAdapterOptionsGetGLProc = 0x0ABCDE, // WGPUSType_RequestAdapterOptionsGetGLProc,
+    RequestAdapterOptionsD3D11Device = 0x0ABCDE, // WGPUSType_RequestAdapterOptionsD3D11Device,
+    DawnRenderPassColorAttachmentRenderToSingleSampled = 0x0ABCDE, // WGPUSType_DawnRenderPassColorAttachmentRenderToSingleSampled,
+    RenderPassPixelLocalStorage = 0x0ABCDE, // WGPUSType_RenderPassPixelLocalStorage,
+    PipelineLayoutPixelLocalStorage = 0x0ABCDE, // WGPUSType_PipelineLayoutPixelLocalStorage,
+    BufferHostMappedPointer = 0x0ABCDE, // WGPUSType_BufferHostMappedPointer,
+    AdapterPropertiesMemoryHeaps = 0x0ABCDE, // WGPUSType_AdapterPropertiesMemoryHeaps,
+    AdapterPropertiesD3D = 0x0ABCDE, // WGPUSType_AdapterPropertiesD3D,
+    AdapterPropertiesVk = 0x0ABCDE, // WGPUSType_AdapterPropertiesVk,
+    DawnWireWGSLControl = 0x0ABCDE, // WGPUSType_DawnWireWGSLControl,
+    DawnWGSLBlocklist = 0x0ABCDE, // WGPUSType_DawnWGSLBlocklist,
+    DawnDrmFormatCapabilities = 0x0ABCDE, // WGPUSType_DawnDrmFormatCapabilities,
+    ShaderModuleCompilationOptions = 0x0ABCDE, // WGPUSType_ShaderModuleCompilationOptions,
+    ColorTargetStateExpandResolveTextureDawn = 0x0ABCDE, // WGPUSType_ColorTargetStateExpandResolveTextureDawn,
+    RenderPassDescriptorExpandResolveRect = 0x0ABCDE, // WGPUSType_RenderPassDescriptorExpandResolveRect,
+    SharedTextureMemoryVkDedicatedAllocationDescriptor = 0x0ABCDE, // WGPUSType_SharedTextureMemoryVkDedicatedAllocationDescriptor,
+    SharedTextureMemoryAHardwareBufferDescriptor = 0x0ABCDE, // WGPUSType_SharedTextureMemoryAHardwareBufferDescriptor,
+    SharedTextureMemoryDmaBufDescriptor = 0x0ABCDE, // WGPUSType_SharedTextureMemoryDmaBufDescriptor,
+    SharedTextureMemoryOpaqueFDDescriptor = 0x0ABCDE, // WGPUSType_SharedTextureMemoryOpaqueFDDescriptor,
+    SharedTextureMemoryZirconHandleDescriptor = 0x0ABCDE, // WGPUSType_SharedTextureMemoryZirconHandleDescriptor,
+    SharedTextureMemoryDXGISharedHandleDescriptor = 0x0ABCDE, // WGPUSType_SharedTextureMemoryDXGISharedHandleDescriptor,
+    SharedTextureMemoryD3D11Texture2DDescriptor = 0x0ABCDE, // WGPUSType_SharedTextureMemoryD3D11Texture2DDescriptor,
+    SharedTextureMemoryIOSurfaceDescriptor = 0x0ABCDE, // WGPUSType_SharedTextureMemoryIOSurfaceDescriptor,
+    SharedTextureMemoryEGLImageDescriptor = 0x0ABCDE, // WGPUSType_SharedTextureMemoryEGLImageDescriptor,
+    SharedTextureMemoryInitializedBeginState = 0x0ABCDE, // WGPUSType_SharedTextureMemoryInitializedBeginState,
+    SharedTextureMemoryInitializedEndState = 0x0ABCDE, // WGPUSType_SharedTextureMemoryInitializedEndState,
+    SharedTextureMemoryVkImageLayoutBeginState = 0x0ABCDE, // WGPUSType_SharedTextureMemoryVkImageLayoutBeginState,
+    SharedTextureMemoryVkImageLayoutEndState = 0x0ABCDE, // WGPUSType_SharedTextureMemoryVkImageLayoutEndState,
+    SharedTextureMemoryD3DSwapchainBeginState = 0x0ABCDE, // WGPUSType_SharedTextureMemoryD3DSwapchainBeginState,
+    SharedFenceVkSemaphoreOpaqueFDDescriptor = 0x0ABCDE, // WGPUSType_SharedFenceVkSemaphoreOpaqueFDDescriptor,
+    SharedFenceVkSemaphoreOpaqueFDExportInfo = 0x0ABCDE, // WGPUSType_SharedFenceVkSemaphoreOpaqueFDExportInfo,
+    SharedFenceSyncFDDescriptor = 0x0ABCDE, // WGPUSType_SharedFenceSyncFDDescriptor,
+    SharedFenceSyncFDExportInfo = 0x0ABCDE, // WGPUSType_SharedFenceSyncFDExportInfo,
+    SharedFenceVkSemaphoreZirconHandleDescriptor = 0x0ABCDE, // WGPUSType_SharedFenceVkSemaphoreZirconHandleDescriptor,
+    SharedFenceVkSemaphoreZirconHandleExportInfo = 0x0ABCDE, // WGPUSType_SharedFenceVkSemaphoreZirconHandleExportInfo,
+    SharedFenceDXGISharedHandleDescriptor = 0x0ABCDE, // WGPUSType_SharedFenceDXGISharedHandleDescriptor,
+    SharedFenceDXGISharedHandleExportInfo = 0x0ABCDE, // WGPUSType_SharedFenceDXGISharedHandleExportInfo,
+    SharedFenceMTLSharedEventDescriptor = 0x0ABCDE, // WGPUSType_SharedFenceMTLSharedEventDescriptor,
+    SharedFenceMTLSharedEventExportInfo = 0x0ABCDE, // WGPUSType_SharedFenceMTLSharedEventExportInfo,
+    SharedBufferMemoryD3D12ResourceDescriptor = 0x0ABCDE, // WGPUSType_SharedBufferMemoryD3D12ResourceDescriptor,
+    StaticSamplerBindingLayout = 0x0ABCDE, // WGPUSType_StaticSamplerBindingLayout,
+    YCbCrVkDescriptor = 0x0ABCDE, // WGPUSType_YCbCrVkDescriptor,
+    SharedTextureMemoryAHardwareBufferProperties = 0x0ABCDE, // WGPUSType_SharedTextureMemoryAHardwareBufferProperties,
+    AHardwareBufferProperties = 0x0ABCDE, // WGPUSType_AHardwareBufferProperties,
+    DawnTexelCopyBufferRowAlignmentLimits = 0x0ABCDE, // WGPUSType_DawnTexelCopyBufferRowAlignmentLimits,
+    AdapterPropertiesSubgroupMatrixConfigs = 0x0ABCDE, // WGPUSType_AdapterPropertiesSubgroupMatrixConfigs,
+    SharedFenceEGLSyncDescriptor = 0x0ABCDE, // WGPUSType_SharedFenceEGLSyncDescriptor,
+    SharedFenceEGLSyncExportInfo = 0x0ABCDE, // WGPUSType_SharedFenceEGLSyncExportInfo,
+    DawnInjectedInvalidSType = 0x0ABCDE, // WGPUSType_DawnInjectedInvalidSType,
+    DawnCompilationMessageUtf16 = 0x0ABCDE, // WGPUSType_DawnCompilationMessageUtf16,
+    DawnFakeBufferOOMForTesting = 0x0ABCDE, // WGPUSType_DawnFakeBufferOOMForTesting,
+    SurfaceDescriptorFromWindowsWinUISwapChainPanel = 0x0ABCDE, // WGPUSType_SurfaceDescriptorFromWindowsWinUISwapChainPanel,
+    DawnDeviceAllocatorControl = 0x0ABCDE, // WGPUSType_DawnDeviceAllocatorControl,
+    DawnHostMappedPointerLimits = 0x0ABCDE, // WGPUSType_DawnHostMappedPointerLimits,
+    RenderPassDescriptorResolveRect = 0x0ABCDE, // WGPUSType_RenderPassDescriptorResolveRect,
+    RequestAdapterWebGPUBackendOptions = 0x0ABCDE, // WGPUSType_RequestAdapterWebGPUBackendOptions,
+    DawnFakeDeviceInitializeErrorForTesting = 0x0ABCDE, // WGPUSType_DawnFakeDeviceInitializeErrorForTesting,
+    TextureComponentSwizzleDescriptor = 0x0ABCDE, // WGPUSType_TextureComponentSwizzleDescriptor,
+    SharedTextureMemoryD3D11BeginState = 0x0ABCDE, // WGPUSType_SharedTextureMemoryD3D11BeginState,
+    DawnConsumeAdapterDescriptor = 0x0ABCDE, // WGPUSType_DawnConsumeAdapterDescriptor,
+    BindGroupLayoutDynamicBindingArray = 0x0ABCDE, // WGPUSType_BindGroupLayoutDynamicBindingArray,
+    DynamicBindingArrayLimits = 0x0ABCDE, // WGPUSType_DynamicBindingArrayLimits,
+    BindGroupDynamicBindingArray = 0x0ABCDE, // WGPUSType_BindGroupDynamicBindingArray,
 };
 // static_assert(sizeof(SType) == sizeof(WGPUSType), "sizeof mismatch for SType");
 // static_assert(alignof(SType) == alignof(WGPUSType), "alignof mismatch for SType");
 
 enum class SubgroupMatrixComponentType : uint32_t {
-    F32 = 0xABCDEF, // WGPUSubgroupMatrixComponentType_F32,
-    F16 = 0xABCDEF, // WGPUSubgroupMatrixComponentType_F16,
-    U32 = 0xABCDEF, // WGPUSubgroupMatrixComponentType_U32,
-    I32 = 0xABCDEF, // WGPUSubgroupMatrixComponentType_I32,
-    U8 = 0xABCDEF, // WGPUSubgroupMatrixComponentType_U8,
-    I8 = 0xABCDEF, // WGPUSubgroupMatrixComponentType_I8,
+    F32 = 0x0ABCDE, // WGPUSubgroupMatrixComponentType_F32,
+    F16 = 0x0ABCDE, // WGPUSubgroupMatrixComponentType_F16,
+    U32 = 0x0ABCDE, // WGPUSubgroupMatrixComponentType_U32,
+    I32 = 0x0ABCDE, // WGPUSubgroupMatrixComponentType_I32,
+    U8 = 0x0ABCDE, // WGPUSubgroupMatrixComponentType_U8,
+    I8 = 0x0ABCDE, // WGPUSubgroupMatrixComponentType_I8,
 };
 // static_assert(sizeof(SubgroupMatrixComponentType) == sizeof(WGPUSubgroupMatrixComponentType), "sizeof mismatch for SubgroupMatrixComponentType");
 // static_assert(alignof(SubgroupMatrixComponentType) == alignof(WGPUSubgroupMatrixComponentType), "alignof mismatch for SubgroupMatrixComponentType");
@@ -832,9 +832,9 @@ enum class TextureAspect : uint32_t {
     All = WGPUTextureAspect_All,
     StencilOnly = WGPUTextureAspect_StencilOnly,
     DepthOnly = WGPUTextureAspect_DepthOnly,
-    Plane0Only = 0xABCDEF, // WGPUTextureAspect_Plane0Only,
-    Plane1Only = 0xABCDEF, // WGPUTextureAspect_Plane1Only,
-    Plane2Only = 0xABCDEF, // WGPUTextureAspect_Plane2Only,
+    Plane0Only = 0x0ABCDE, // WGPUTextureAspect_Plane0Only,
+    Plane1Only = 0x0ABCDE, // WGPUTextureAspect_Plane1Only,
+    Plane2Only = 0x0ABCDE, // WGPUTextureAspect_Plane2Only,
 };
 // static_assert(sizeof(TextureAspect) == sizeof(WGPUTextureAspect), "sizeof mismatch for TextureAspect");
 // static_assert(alignof(TextureAspect) == alignof(WGPUTextureAspect), "alignof mismatch for TextureAspect");
@@ -854,8 +854,8 @@ enum class TextureFormat : uint32_t {
     R8Snorm = WGPUTextureFormat_R8Snorm,
     R8Uint = WGPUTextureFormat_R8Uint,
     R8Sint = WGPUTextureFormat_R8Sint,
-    R16Unorm = 0xABCDEF, // WGPUTextureFormat_R16Unorm,
-    R16Snorm = 0xABCDEF, // WGPUTextureFormat_R16Snorm,
+    R16Unorm = 0x0ABCDE, // WGPUTextureFormat_R16Unorm,
+    R16Snorm = 0x0ABCDE, // WGPUTextureFormat_R16Snorm,
     R16Uint = WGPUTextureFormat_R16Uint,
     R16Sint = WGPUTextureFormat_R16Sint,
     R16Float = WGPUTextureFormat_R16Float,
@@ -866,8 +866,8 @@ enum class TextureFormat : uint32_t {
     R32Float = WGPUTextureFormat_R32Float,
     R32Uint = WGPUTextureFormat_R32Uint,
     R32Sint = WGPUTextureFormat_R32Sint,
-    RG16Unorm = 0xABCDEF, // WGPUTextureFormat_RG16Unorm,
-    RG16Snorm = 0xABCDEF, // WGPUTextureFormat_RG16Snorm,
+    RG16Unorm = 0x0ABCDE, // WGPUTextureFormat_RG16Unorm,
+    RG16Snorm = 0x0ABCDE, // WGPUTextureFormat_RG16Snorm,
     RG16Uint = WGPUTextureFormat_RG16Uint,
     RG16Sint = WGPUTextureFormat_RG16Sint,
     RG16Float = WGPUTextureFormat_RG16Float,
@@ -885,8 +885,8 @@ enum class TextureFormat : uint32_t {
     RG32Float = WGPUTextureFormat_RG32Float,
     RG32Uint = WGPUTextureFormat_RG32Uint,
     RG32Sint = WGPUTextureFormat_RG32Sint,
-    RGBA16Unorm = 0xABCDEF, // WGPUTextureFormat_RGBA16Unorm,
-    RGBA16Snorm = 0xABCDEF, // WGPUTextureFormat_RGBA16Snorm,
+    RGBA16Unorm = 0x0ABCDE, // WGPUTextureFormat_RGBA16Unorm,
+    RGBA16Snorm = 0x0ABCDE, // WGPUTextureFormat_RGBA16Snorm,
     RGBA16Uint = WGPUTextureFormat_RGBA16Uint,
     RGBA16Sint = WGPUTextureFormat_RGBA16Sint,
     RGBA16Float = WGPUTextureFormat_RGBA16Float,
@@ -951,14 +951,14 @@ enum class TextureFormat : uint32_t {
     ASTC12x10UnormSrgb = WGPUTextureFormat_ASTC12x10UnormSrgb,
     ASTC12x12Unorm = WGPUTextureFormat_ASTC12x12Unorm,
     ASTC12x12UnormSrgb = WGPUTextureFormat_ASTC12x12UnormSrgb,
-    R8BG8Biplanar420Unorm = 0xABCDEF, // WGPUTextureFormat_R8BG8Biplanar420Unorm,
-    R10X6BG10X6Biplanar420Unorm = 0xABCDEF, // WGPUTextureFormat_R10X6BG10X6Biplanar420Unorm,
-    R8BG8A8Triplanar420Unorm = 0xABCDEF, // WGPUTextureFormat_R8BG8A8Triplanar420Unorm,
-    R8BG8Biplanar422Unorm = 0xABCDEF, // WGPUTextureFormat_R8BG8Biplanar422Unorm,
-    R8BG8Biplanar444Unorm = 0xABCDEF, // WGPUTextureFormat_R8BG8Biplanar444Unorm,
-    R10X6BG10X6Biplanar422Unorm = 0xABCDEF, // WGPUTextureFormat_R10X6BG10X6Biplanar422Unorm,
-    R10X6BG10X6Biplanar444Unorm = 0xABCDEF, // WGPUTextureFormat_R10X6BG10X6Biplanar444Unorm,
-    External = 0xABCDEF, // WGPUTextureFormat_External,
+    R8BG8Biplanar420Unorm = 0x0ABCDE, // WGPUTextureFormat_R8BG8Biplanar420Unorm,
+    R10X6BG10X6Biplanar420Unorm = 0x0ABCDE, // WGPUTextureFormat_R10X6BG10X6Biplanar420Unorm,
+    R8BG8A8Triplanar420Unorm = 0x0ABCDE, // WGPUTextureFormat_R8BG8A8Triplanar420Unorm,
+    R8BG8Biplanar422Unorm = 0x0ABCDE, // WGPUTextureFormat_R8BG8Biplanar422Unorm,
+    R8BG8Biplanar444Unorm = 0x0ABCDE, // WGPUTextureFormat_R8BG8Biplanar444Unorm,
+    R10X6BG10X6Biplanar422Unorm = 0x0ABCDE, // WGPUTextureFormat_R10X6BG10X6Biplanar422Unorm,
+    R10X6BG10X6Biplanar444Unorm = 0x0ABCDE, // WGPUTextureFormat_R10X6BG10X6Biplanar444Unorm,
+    External = 0x0ABCDE, // WGPUTextureFormat_External,
 };
 // static_assert(sizeof(TextureFormat) == sizeof(WGPUTextureFormat), "sizeof mismatch for TextureFormat");
 // static_assert(alignof(TextureFormat) == alignof(WGPUTextureFormat), "alignof mismatch for TextureFormat");
@@ -1061,14 +1061,14 @@ enum class WGSLLanguageFeatureName : uint32_t {
     Packed4x8IntegerDotProduct = WGPUWGSLLanguageFeatureName_Packed4x8IntegerDotProduct,
     UnrestrictedPointerParameters = WGPUWGSLLanguageFeatureName_UnrestrictedPointerParameters,
     PointerCompositeAccess = WGPUWGSLLanguageFeatureName_PointerCompositeAccess,
-    SizedBindingArray = 0xABCDEF, // WGPUWGSLLanguageFeatureName_SizedBindingArray,
-    TexelBuffers = 0xABCDEF, // WGPUWGSLLanguageFeatureName_TexelBuffers,
-    ChromiumPrint = 0xABCDEF, // WGPUWGSLLanguageFeatureName_ChromiumPrint,
-    ChromiumTestingUnimplemented = 0xABCDEF, // WGPUWGSLLanguageFeatureName_ChromiumTestingUnimplemented,
-    ChromiumTestingUnsafeExperimental = 0xABCDEF, // WGPUWGSLLanguageFeatureName_ChromiumTestingUnsafeExperimental,
-    ChromiumTestingExperimental = 0xABCDEF, // WGPUWGSLLanguageFeatureName_ChromiumTestingExperimental,
-    ChromiumTestingShippedWithKillswitch = 0xABCDEF, // WGPUWGSLLanguageFeatureName_ChromiumTestingShippedWithKillswitch,
-    ChromiumTestingShipped = 0xABCDEF, // WGPUWGSLLanguageFeatureName_ChromiumTestingShipped,
+    SizedBindingArray = 0x0ABCDE, // WGPUWGSLLanguageFeatureName_SizedBindingArray,
+    TexelBuffers = 0x0ABCDE, // WGPUWGSLLanguageFeatureName_TexelBuffers,
+    ChromiumPrint = 0x0ABCDE, // WGPUWGSLLanguageFeatureName_ChromiumPrint,
+    ChromiumTestingUnimplemented = 0x0ABCDE, // WGPUWGSLLanguageFeatureName_ChromiumTestingUnimplemented,
+    ChromiumTestingUnsafeExperimental = 0x0ABCDE, // WGPUWGSLLanguageFeatureName_ChromiumTestingUnsafeExperimental,
+    ChromiumTestingExperimental = 0x0ABCDE, // WGPUWGSLLanguageFeatureName_ChromiumTestingExperimental,
+    ChromiumTestingShippedWithKillswitch = 0x0ABCDE, // WGPUWGSLLanguageFeatureName_ChromiumTestingShippedWithKillswitch,
+    ChromiumTestingShipped = 0x0ABCDE, // WGPUWGSLLanguageFeatureName_ChromiumTestingShipped,
 };
 // static_assert(sizeof(WGSLLanguageFeatureName) == sizeof(WGPUWGSLLanguageFeatureName), "sizeof mismatch for WGSLLanguageFeatureName");
 // static_assert(alignof(WGSLLanguageFeatureName) == alignof(WGPUWGSLLanguageFeatureName), "alignof mismatch for WGSLLanguageFeatureName");
@@ -1086,10 +1086,10 @@ enum class BufferUsage : uint64_t {
     Storage = WGPUBufferUsage_Storage,
     Indirect = WGPUBufferUsage_Indirect,
     QueryResolve = WGPUBufferUsage_QueryResolve,
-    TexelBuffer = 0xABCDEF, // WGPUBufferUsage_TexelBuffer,
+    TexelBuffer = 0x0ABCDE, // WGPUBufferUsage_TexelBuffer,
 };
-// static_assert(sizeof(BufferUsage) == sizeof(WGPUBufferUsage), "sizeof mismatch for BufferUsage");
-// static_assert(alignof(BufferUsage) == alignof(WGPUBufferUsage), "alignof mismatch for BufferUsage");
+static_assert(sizeof(BufferUsage) == sizeof(WGPUBufferUsage), "sizeof mismatch for BufferUsage");
+static_assert(alignof(BufferUsage) == alignof(WGPUBufferUsage), "alignof mismatch for BufferUsage");
 
 enum class ColorWriteMask : uint64_t {
     None = WGPUColorWriteMask_None,
@@ -1103,12 +1103,12 @@ enum class ColorWriteMask : uint64_t {
 // static_assert(alignof(ColorWriteMask) == alignof(WGPUColorWriteMask), "alignof mismatch for ColorWriteMask");
 
 enum class HeapProperty : uint64_t {
-    None = 0xABCDEF, // WGPUHeapProperty_None,
-    DeviceLocal = 0xABCDEF, // WGPUHeapProperty_DeviceLocal,
-    HostVisible = 0xABCDEF, // WGPUHeapProperty_HostVisible,
-    HostCoherent = 0xABCDEF, // WGPUHeapProperty_HostCoherent,
-    HostUncached = 0xABCDEF, // WGPUHeapProperty_HostUncached,
-    HostCached = 0xABCDEF, // WGPUHeapProperty_HostCached,
+    None = 0x0ABCDE, // WGPUHeapProperty_None,
+    DeviceLocal = 0x0ABCDE, // WGPUHeapProperty_DeviceLocal,
+    HostVisible = 0x0ABCDE, // WGPUHeapProperty_HostVisible,
+    HostCoherent = 0x0ABCDE, // WGPUHeapProperty_HostCoherent,
+    HostUncached = 0x0ABCDE, // WGPUHeapProperty_HostUncached,
+    HostCached = 0x0ABCDE, // WGPUHeapProperty_HostCached,
 };
 // static_assert(sizeof(HeapProperty) == sizeof(WGPUHeapProperty), "sizeof mismatch for HeapProperty");
 // static_assert(alignof(HeapProperty) == alignof(WGPUHeapProperty), "alignof mismatch for HeapProperty");
@@ -1118,8 +1118,8 @@ enum class MapMode : uint64_t {
     Read = WGPUMapMode_Read,
     Write = WGPUMapMode_Write,
 };
-// static_assert(sizeof(MapMode) == sizeof(WGPUMapMode), "sizeof mismatch for MapMode");
-// static_assert(alignof(MapMode) == alignof(WGPUMapMode), "alignof mismatch for MapMode");
+static_assert(sizeof(MapMode) == sizeof(WGPUMapMode), "sizeof mismatch for MapMode");
+static_assert(alignof(MapMode) == alignof(WGPUMapMode), "alignof mismatch for MapMode");
 
 enum class ShaderStage : uint64_t {
     None = WGPUShaderStage_None,
@@ -1137,8 +1137,8 @@ enum class TextureUsage : uint64_t {
     TextureBinding = WGPUTextureUsage_TextureBinding,
     StorageBinding = WGPUTextureUsage_StorageBinding,
     RenderAttachment = WGPUTextureUsage_RenderAttachment,
-    TransientAttachment = 0xABCDEF, // WGPUTextureUsage_TransientAttachment,
-    StorageAttachment = 0xABCDEF, // WGPUTextureUsage_StorageAttachment,
+    TransientAttachment = 0x0ABCDE, // WGPUTextureUsage_TransientAttachment,
+    StorageAttachment = 0x0ABCDE, // WGPUTextureUsage_StorageAttachment,
 };
 // static_assert(sizeof(TextureUsage) == sizeof(WGPUTextureUsage), "sizeof mismatch for TextureUsage");
 // static_assert(alignof(TextureUsage) == alignof(WGPUTextureUsage), "alignof mismatch for TextureUsage");
@@ -5604,10 +5604,10 @@ ShaderSourceWGSL::operator const WGPUShaderSourceWGSL&() const noexcept {
     return *reinterpret_cast<const WGPUShaderSourceWGSL*>(this);
 }
 
-// static_assert(sizeof(ShaderSourceWGSL) == sizeof(WGPUShaderSourceWGSL), "sizeof mismatch for ShaderSourceWGSL");
-// static_assert(alignof(ShaderSourceWGSL) == alignof(WGPUShaderSourceWGSL), "alignof mismatch for ShaderSourceWGSL");
-// static_assert(offsetof(ShaderSourceWGSL, code) == offsetof(WGPUShaderSourceWGSL, code),
-        // "offsetof mismatch for ShaderSourceWGSL::code");
+static_assert(sizeof(ShaderSourceWGSL) == sizeof(WGPUShaderSourceWGSL), "sizeof mismatch for ShaderSourceWGSL");
+static_assert(alignof(ShaderSourceWGSL) == alignof(WGPUShaderSourceWGSL), "alignof mismatch for ShaderSourceWGSL");
+static_assert(offsetof(ShaderSourceWGSL, code) == offsetof(WGPUShaderSourceWGSL, code),
+        "offsetof mismatch for ShaderSourceWGSL::code");
 
 // SharedBufferMemoryBeginAccessDescriptor implementation
 
@@ -7583,20 +7583,20 @@ RequestAdapterOptions::operator const WGPURequestAdapterOptions&() const noexcep
     return *reinterpret_cast<const WGPURequestAdapterOptions*>(this);
 }
 
-// static_assert(sizeof(RequestAdapterOptions) == sizeof(WGPURequestAdapterOptions), "sizeof mismatch for RequestAdapterOptions");
-// static_assert(alignof(RequestAdapterOptions) == alignof(WGPURequestAdapterOptions), "alignof mismatch for RequestAdapterOptions");
-// static_assert(offsetof(RequestAdapterOptions, nextInChain) == offsetof(WGPURequestAdapterOptions, nextInChain),
-        // "offsetof mismatch for RequestAdapterOptions::nextInChain");
-// static_assert(offsetof(RequestAdapterOptions, featureLevel) == offsetof(WGPURequestAdapterOptions, featureLevel),
-        // "offsetof mismatch for RequestAdapterOptions::featureLevel");
-// static_assert(offsetof(RequestAdapterOptions, powerPreference) == offsetof(WGPURequestAdapterOptions, powerPreference),
-        // "offsetof mismatch for RequestAdapterOptions::powerPreference");
-// static_assert(offsetof(RequestAdapterOptions, forceFallbackAdapter) == offsetof(WGPURequestAdapterOptions, forceFallbackAdapter),
-        // "offsetof mismatch for RequestAdapterOptions::forceFallbackAdapter");
-// static_assert(offsetof(RequestAdapterOptions, backendType) == offsetof(WGPURequestAdapterOptions, backendType),
-        // "offsetof mismatch for RequestAdapterOptions::backendType");
-// static_assert(offsetof(RequestAdapterOptions, compatibleSurface) == offsetof(WGPURequestAdapterOptions, compatibleSurface),
-        // "offsetof mismatch for RequestAdapterOptions::compatibleSurface");
+static_assert(sizeof(RequestAdapterOptions) == sizeof(WGPURequestAdapterOptions), "sizeof mismatch for RequestAdapterOptions");
+static_assert(alignof(RequestAdapterOptions) == alignof(WGPURequestAdapterOptions), "alignof mismatch for RequestAdapterOptions");
+static_assert(offsetof(RequestAdapterOptions, nextInChain) == offsetof(WGPURequestAdapterOptions, nextInChain),
+        "offsetof mismatch for RequestAdapterOptions::nextInChain");
+static_assert(offsetof(RequestAdapterOptions, featureLevel) == offsetof(WGPURequestAdapterOptions, featureLevel),
+        "offsetof mismatch for RequestAdapterOptions::featureLevel");
+static_assert(offsetof(RequestAdapterOptions, powerPreference) == offsetof(WGPURequestAdapterOptions, powerPreference),
+        "offsetof mismatch for RequestAdapterOptions::powerPreference");
+static_assert(offsetof(RequestAdapterOptions, forceFallbackAdapter) == offsetof(WGPURequestAdapterOptions, forceFallbackAdapter),
+        "offsetof mismatch for RequestAdapterOptions::forceFallbackAdapter");
+static_assert(offsetof(RequestAdapterOptions, backendType) == offsetof(WGPURequestAdapterOptions, backendType),
+        "offsetof mismatch for RequestAdapterOptions::backendType");
+static_assert(offsetof(RequestAdapterOptions, compatibleSurface) == offsetof(WGPURequestAdapterOptions, compatibleSurface),
+        "offsetof mismatch for RequestAdapterOptions::compatibleSurface");
 
 // SamplerDescriptor implementation
 
@@ -8594,6 +8594,8 @@ void const * Buffer::GetConstMappedRange(size_t offset, size_t size) const {
     return result;
 }
 void * Buffer::GetMappedRange(size_t offset, size_t size) const {
+    // TODO upstream Dawn seems to return null if the buffer is not mapped instead of throwing
+    // https://github.com/google/dawn/blob/3346a9fb73ec04be57d45f514e0614d3f0b5914e/src/dawn/native/Buffer.cpp#L725-L726
     auto result = wgpuBufferGetMappedRange(Get(), offset, size);
     return result;
 }
