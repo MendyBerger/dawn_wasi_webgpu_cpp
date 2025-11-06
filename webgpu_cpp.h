@@ -44,7 +44,7 @@
 #include <type_traits>
 #include <utility>
 
-#include "webgpu/webgpu.h"
+#include <webgpu/webgpu.h>
 #include "./webgpu_cpp_chained_struct.h"
 #include "./webgpu_enum_class_bitmasks.h"  // IWYU pragma: export
 
