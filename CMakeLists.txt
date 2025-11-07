@@ -11,7 +11,7 @@ include(FetchContent)
 FetchContent_Declare(
     wasi_webgpu_headers
     GIT_REPOSITORY https://github.com/wasi-gfx/wasi-webgpu-headers.git
-    GIT_TAG cc724c304df8ac634e1e0d1927a10b586030dc84
+    GIT_TAG b1584349095e1a378c60bad99cac23749bb34fe2
 )
 
 FetchContent_GetProperties(wasi_webgpu_headers)
